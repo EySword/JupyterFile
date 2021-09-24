@@ -1,0 +1,19 @@
+通过 matplotlib.interactive() 设置交互模式的开启与关闭
+通过 matplotlib.is_interactive() 查询当前实发支持交互模式
+也可以通过 matplotlib.pyplot.ion() 和 matplotlib.pyplot.ioff() 来开启/关闭交互模式
+
+常用 backend
+不可交互型
+AGG：渲染为 png 文件
+PS：渲染为 ps 文件
+PDF：渲染为 pdf 文件
+SVG：渲染为 svg 文件
+Cairo：使用 Cairo 引擎渲染
+可交互型
+Qt5Agg：使用 Qt5 渲染，IPython 中可使用 %matplotlib qt5
+Qt4Agg：使用 Qt4 渲染，IPython 中可使用 %matplotlib qt4
+ipympl：使用 ipympl 库，Ipython 中可使用 %matplotlib ipympl
+macosx：使用 Cocoa 画布渲染，Ipython 中可使用 %matplotlib osx
+nbAgg：Jupyter Notebook 中使用的 backend，Jupyter 中使用 %matplotlib notebook 来激活
+WXAgg：使用 wxWidgets 库来渲染，Ipython 中可使用 %matplotlib wx
+inline：严格地讲并不是一个 backend，这个 IPython 中的一个语法，表示把图表嵌入笔记中，使用 %matplotlib inline
