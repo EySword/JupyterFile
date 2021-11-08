@@ -1,2 +1,3 @@
 *.hdf5
-HJ/lec5-real-data.csv
+*.csv
+*.dat
