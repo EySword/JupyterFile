@@ -13,6 +13,14 @@ periodic_table={0: 'H',1: 'He',2: 'Li',3: 'Be',4: 'B',5: 'C',6: 'N',7: 'O',8: 'F
                106: 'Bh',107: 'Hs',108: 'Mt',109: 'Ds',110: 'Rg',111: 'Cn',112: 'Nh',113: 'Fl',114: 'Mc',115: 'Lv',116: 'Ts',117: 'Og',118: 'Uue'}
 
 
+import json
+def saveJsonFile(python_list, filename):
+    json_list = json.dumps(python_list)
+    with open(filename, 'w') as file_obj:
+      json.dump(json_list, file_obj)
+saveJsonFile(periodic_table,"periodic_table.json")
+
+
 def FindForce(outdata):
 
     f = []
