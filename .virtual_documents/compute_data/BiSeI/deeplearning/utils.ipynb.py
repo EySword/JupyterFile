@@ -41,7 +41,7 @@ list(s.cart_coords[0])
 
 def getElementsNodes(filename):
     '''
-    return python list of all element features
+    return python list of all element nodes
     '''
     poscar = Poscar.from_file(filename).structure
     ele = poscar.atomic_numbers
@@ -50,7 +50,7 @@ def getElementsNodes(filename):
     nodes=[]
     for i in range(ele_num):
         node = []
-        node = node + (list(poss[i]))
+        node = node + (list(poss[i])) + elementFeatures(ele[i])
         nodes.append(node)
     return nodes
 
@@ -64,5 +64,15 @@ node_list
 import pymatgen.core.periodic_table as pt
 
 
-def elementFeatures(ele_name):
+def elementFeatures(ele_num):
+    '''
+    return python list of elements features
+    '''
+    feature = []
+    ele_name = PT[str(ele_num)]
     ele = pt.Element(ele_name)
+    feature = feature + [ele.number]
+    return feature
+
+
+
